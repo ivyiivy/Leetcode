@@ -3,7 +3,7 @@
 
 class Solution:
     def myAtoi(self, str: str) -> int:
-        if str =='':
+        if str == '':
             return 0
         i = 0
         while str[i] == ' ':
@@ -11,27 +11,29 @@ class Solution:
             if i >= len(str):
                 return 0
 
-        str1 = str[i:]
+        str = str[i:]
 
         num = 0
         i = 0
 
-        if str1[i] == '-' or str1[i] == '+':
+        if str[i] == '-' or str[i] == '+':
             j = i
             i += 1
-            while '9' >= str1[i] >= '0':
-                num = num * 10 + int(str1[i])
+            if i >= len(str):
+                return 0
+            while '9' >= str[i] >= '0':
+                num = num * 10 + int(str[i])
                 i += 1
-                if i >= len(str1):
+                if i >= len(str):
                     break
 
-            if str1[j] == '-':
+            if str[j] == '-':
                 num = num * -1
-        elif '9' >= str1[i] >= '0':
-            while '9' >= str1[i] >= '0':
-                num = num * 10 + int(str1[i])
+        elif '9' >= str[i] >= '0':
+            while '9' >= str[i] >= '0':
+                num = num * 10 + int(str[i])
                 i += 1
-                if i >= len(str1):
+                if i >= len(str):
                     break
         else:
             return 0
@@ -44,5 +46,6 @@ class Solution:
 
 
 solution = Solution()
-print(solution.myAtoi('-91283472332'))
+print(solution.myAtoi('+'))
 
+str.ls
