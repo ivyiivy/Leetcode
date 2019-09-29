@@ -1,4 +1,5 @@
 #  List 一定要考虑越界问题！！
+# 可以用str.strip函数去掉左边的空格
 
 
 class Solution:
@@ -47,5 +48,3 @@ class Solution:
 
 solution = Solution()
 print(solution.myAtoi('+'))
-
-str.ls
